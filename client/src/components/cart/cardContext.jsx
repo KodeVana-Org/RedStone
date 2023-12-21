@@ -7,35 +7,33 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }) => {
-  // Retrieve cart items from localStorage on component mount
   const initialCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
   const [cartItems, setCartItems] = useState(initialCartItems);
 
-  // Function to save cart items to localStorage
   const saveCartToLocalStorage = (items) => {
     localStorage.setItem('cartItems', JSON.stringify(items));
   };
 
-  const addToCart = (product) => {
-    const existingItem = cartItems.find(item => item.id === product.id);
+  const addToCart = (product, size) => {
+    const existingItem = cartItems.find(item => item.id === product.id && item.selectedSize === size);
 
     if (existingItem) {
       const updatedCartItems = cartItems.map(item =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === product.id && item.selectedSize ===size ? { ...item, quantity: item.quantity + 1 } : item
       );
       setCartItems(updatedCartItems);
-      saveCartToLocalStorage(updatedCartItems); // Save updated cart to localStorage
+      saveCartToLocalStorage(updatedCartItems);
     } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
-      saveCartToLocalStorage([...cartItems, { ...product, quantity: 1 }]); // Save updated cart to localStorage
+      setCartItems([...cartItems, { ...product, quantity: 1, selectedSize: size }]);
+      saveCartToLocalStorage([...cartItems, { ...product, quantity: 1, selectedSize: size }]);
     }
   };
 
   const removeFromCart = (productId) => {
     const updatedCartItems = cartItems.filter(item => item.id !== productId);
     setCartItems(updatedCartItems);
-    saveCartToLocalStorage(updatedCartItems); // Save updated cart to localStorage
+    saveCartToLocalStorage(updatedCartItems);
   };
 
   return (

@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Img } from 'react-image';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import NavBar from '../components/navBar';
 import Footer from '../components/footer';
 
 import ProductsData from '../assets/product';
-import { useCart } from './cardContext';
+import { useCart } from '../components/cart/cardContext';
 
 export default function Product() {
   const [selectedSize, setSelectedSize] = useState(null);
@@ -25,6 +27,33 @@ export default function Product() {
     return <div className='text-[#ff523b]'>Product not found!</div>;
   }
   const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    if (selectedSize) {
+      addToCart(product, selectedSize);
+      setSelectedSize(null); 
+      toast.success('Item added to cart!', {
+        position: 'top-center',
+        autoClose: 500, 
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      
+    } else {
+      toast.error('Please select a size!', {
+        position: 'top-center',
+        autoClose: 500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    })
+  };
+}
 
   return (
     <div>
@@ -67,7 +96,7 @@ export default function Product() {
         </div>
         <div className='flex gap-7 justify-center'>
           <Link className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' to={'/cart'}>Buy Now</Link>
-          <button onClick={() => addToCart(product)} className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md'>
+          <button onClick={() => handleAddToCart(product)} className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md'>
             Add to Cart
           </button>
           <Link className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' to={'/cart'}>Go to Cart</Link>

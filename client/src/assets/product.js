@@ -107,7 +107,7 @@ const productsData = [
   },
   {
     id: 13,
-    name: 'Smart workout wrist band',
+    name: 'Smart wrist band',
     image: Product_14,
     link: '/product',
     price: 103.00
