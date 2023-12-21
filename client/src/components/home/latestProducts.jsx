@@ -12,7 +12,7 @@ function LatestProducts() {
       <div className="my-24 grid grid-rows-2 gap-16">
         <div className="flex gap-5 justify-center">
           {ProductsData.slice(0, 4).map((product) => (
-            <Link key={product.id} className="transition-all duration-700 hover:-translate-y-2" to={`/product/${product.id}`}>
+            <Link key={product.id} className="transition-all duration-300 hover:-translate-y-2" to={`/product/${product.id}`}>
               <Img className="mb-1 h-80" src={product.image} alt={product.name} />
               <h3 className="mb-1 text-gray-600">{product.name}</h3>
               <div className="mb-1 flex gap-2 w-fit text-[#ff523b]">
@@ -28,7 +28,7 @@ function LatestProducts() {
         </div>
         <div className="flex gap-5 justify-center">
           {ProductsData.slice(8, 12).map((product) => (
-            <Link key={product.id} className="transition-all duration-700 hover:-translate-y-2" to={`/product/${product.id}`}>
+            <Link key={product.id} className="transition-all duration-300 hover:-translate-y-2" to={`/product/${product.id}`}>
               <Img className="mb-1 h-80" src={product.image} alt={product.name} />
               <h3 className="mb-1 text-gray-600">{product.name}</h3>
               <div className="mb-1 flex gap-2 w-fit text-[#ff523b]">

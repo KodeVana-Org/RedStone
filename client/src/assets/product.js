@@ -11,7 +11,6 @@ import Product_10 from './product-10.jpg'
 import Product_11 from './product-11.jpg'
 import Product_12 from './product-12.jpg'
 import Product_13 from './product-13.jpg'
-import Product_14 from './product-14.png'
 
 const productsData = [
   {
@@ -104,13 +103,6 @@ const productsData = [
     image: Product_13,
     link: '/product',
     price: 94.00
-  },
-  {
-    id: 13,
-    name: 'Smart wrist band',
-    image: Product_14,
-    link: '/product',
-    price: 103.00
   },
 ];
 
