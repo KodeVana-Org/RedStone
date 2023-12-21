@@ -7,7 +7,7 @@ function AboutContent() {
     <div className="mx-96 py-20">
       <div className="grid grid-cols-2 gap-9">
         <div>
-          <h2 className='mb-3 text-3xl font-semibold'><span className='text-[#ff523b]'>Red</span>Store Your Ultimate Fashion Destination</h2>
+          <h2 className='mb-3 text-3xl font-semibold'><span className='text-[#ff523b]'>Red</span>Store <br />Your Ultimate Fashion Destination</h2>
           <p className='mb-7 text-gray-600'>Welcome to RedStore, where style meets convenience! RedStore is your go-to e-commerce destination for an extensive range of clothing, shoes, and watches. Our carefully curated collection brings together the latest trends, timeless classics, and everything in between, ensuring that you find the perfect style for every occasion.</p>
           <h3 className='mb-3 text-xl font-semibold'>Fashion for Every Taste</h3>
           <p className='mb-7 text-gray-600'>Discover a diverse selection of clothing that caters to every taste and preference. From casual wear that keeps you comfortable throughout the day to elegant evening dresses that make a statement, RedStore has it all. Our wide range of sizes and styles ensures that everyone finds their ideal fit.</p>

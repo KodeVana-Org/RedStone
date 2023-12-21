@@ -31,7 +31,7 @@ function ProductCards() {
               <i className="fa fa-star-half-o" ></i>
               <i className="fa fa-star-o" ></i>
             </div>
-            <p className="text-gray-600">{product.price}</p>
+            <p className="text-gray-600">${product.price}</p>
           </Link>
         ))}
       </div>
