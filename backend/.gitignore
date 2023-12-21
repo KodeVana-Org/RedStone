@@ -1,2 +1,25 @@
+# Dependency directories
+/node_modules
+**/node_modules
+
+# Environment variables file
 .env
-node_modules
+
+# Editor specific files
+.vscode
+.idea
+
+# Logs
+*.log
+
+
+# Build output
+/dist
+/build
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Vite files
+.vite
