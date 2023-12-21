@@ -7,7 +7,7 @@ import Product from './pages/Product.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Cart from './pages/Cart.jsx';
-import { CartProvider } from './pages/cardContext.jsx';
+import { CartProvider } from './components/cart/cardContext.jsx';
 import Account from './pages/Account.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
