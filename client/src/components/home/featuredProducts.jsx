@@ -11,7 +11,7 @@ function FeaturedProducts() {
       </div>
       <div className="my-16 flex gap-5 justify-center">
         {ProductsData.slice(9, 13).map((product) => (
-          <Link key={product.id} className="transition-all duration-700 hover:-translate-y-2" to={`/product/${product.id}`}>
+          <Link key={product.id} className="transition-all duration-300 hover:-translate-y-2" to={`/product/${product.id}`}>
             <Img className="mb-1 h-80" src={product.image} alt={product.name} />
             <h3 className="mb-1 text-gray-600">{product.name}</h3>
             <div className="mb-1 flex gap-2 w-fit text-[#ff523b]">
