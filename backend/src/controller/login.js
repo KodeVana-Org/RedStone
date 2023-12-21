@@ -27,10 +27,9 @@ exports.Login =  async (req, res) => {
         const user = decodedToken
         // Accessing email and id from the decoded token
         res.status(200).json({
-             token: token, 
+             data: token, 
              user 
             });
-        // console.log(user.email, user.id)
 
 
     } catch (err) {

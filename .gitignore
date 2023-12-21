@@ -4,7 +4,8 @@
 
 # Environment variables file
 .env
-
+/.vite
+.vite
 # Editor specific files
 .vscode
 .idea
