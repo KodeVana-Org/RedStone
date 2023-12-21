@@ -79,7 +79,7 @@ const CartPage = () => {
 
       </div>
       <div className='my-16'>
-        <h3 className='mb-7 text-2xl font-semibold'>Products that suits your wardrobe</h3>
+        <h3 className='mb-7 text-2xl font-semibold'>Products that awaits your wardrobe</h3>
         <div className="flex gap-5 justify-center">
           {ProductsData.slice(9, 13).map((product) => (
             <Link key={product.id} className="transition-all duration-300 hover:-translate-y-2" to={`/product/${product.id}`}>
