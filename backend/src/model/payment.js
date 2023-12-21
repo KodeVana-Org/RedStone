@@ -8,6 +8,7 @@ const productSchema = new Schema({
     cvc: Number,
     cardHolderName: String,
     size: String,
+    id: Number,
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User' 

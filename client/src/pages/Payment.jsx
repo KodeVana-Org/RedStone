@@ -44,6 +44,7 @@ export const Payment = () => {
         cvc,
         amount: product.price,
         productName: product.name,
+        id: id,
         size: size,
       };
 

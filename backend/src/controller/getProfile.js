@@ -10,7 +10,7 @@ exports.getProfile = async (req, res) => {
       const userId = req.user.id;
   
       const userDetails = await User.findOne({ _id: userId });
-      const purchaseDetails = await ProductDetails.findOne({ user: userId }).populate('user').exec();
+      const purchaseDetails = await ProductDetails.find({ user: userId }).populate('user').exec();
   
       let responseData = {};
   

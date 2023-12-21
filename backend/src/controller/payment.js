@@ -18,7 +18,7 @@ const verifyToken = require('../middleware/verifyToken')
 
 exports.Payment =  async (req, res) => {
   try {
-    const { productName, amount, cardHolderName,cardNumber, size, cvc} = req.body;
+    const { productName, amount, cardHolderName,cardNumber, size,id, cvc} = req.body;
     const userId = req.user.id ;
     // console.log(userId);
 
@@ -30,6 +30,7 @@ exports.Payment =  async (req, res) => {
       cardHolderName,
       cardNumber,
       size,
+      id: id,
       user: userId
     });
 

@@ -62,7 +62,9 @@ export default function Product() {
 
   const { addToCart } = useCart();
 
-  const handleAddToCart = () => {
+  const handleAddToCart = () => { 
+    const token = localStorage.getItem('token')
+    if (token) {
     if (selectedSize) {
       addToCart(product, selectedSize);
       setSelectedSize(null);
@@ -86,7 +88,9 @@ export default function Product() {
         progress: undefined,
       });
     }
+  }
   };
+
 
   return (
     <div>
