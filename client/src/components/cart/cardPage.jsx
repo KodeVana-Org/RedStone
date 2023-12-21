@@ -7,6 +7,9 @@ import { toast } from 'react-toastify';
 
 import ProductsData from '../../assets/product.js'
 
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const CartPage = () => {
 
   const { cartItems, removeFromCart } = useCart();
@@ -52,9 +55,17 @@ const CartPage = () => {
                 <h3 className="text-gray-600">Product Name: {product.name}</h3>
                 <p className="text-gray-600">Price: ${product.price}</p>
                 <p className="text-gray-600">Size: {product.selectedSize}</p>
-                <button onClick={() => handleRemove(product.id)} className='text-sm text-[#ff523b] cursor-pointer'>Remove</button>
-                <Link to={`/payment/${product.id}?source=cart`} onClick={() => handleOrderNow(product.id, product.selectedSize)} className='ml-5 px-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' >Order Now</Link>
-
+                <button
+                  onClick={() => handleRemove(product.id)}
+                  className='text-sm text-[#ff523b] cursor-pointer'>
+                  Remove
+                </button>
+                <Link
+                  to={`/payment/${product.id}?source=cart`}
+                  onClick={() => handleOrderNow(product.id, product.selectedSize)}
+                  className='ml-5 px-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' >
+                  Order Now
+                </Link>
               </span>
             </span>
             <input className="p-1 h-10 w-10 border" value={product.quantity} type="number" readOnly />
@@ -63,9 +74,7 @@ const CartPage = () => {
                 ? 'Invalid Subtotal'
                 : calculateSubtotal(product.price, product.quantity)}
             </p>
-
           </div>
-
         ))}
 
       </div>

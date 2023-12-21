@@ -40,9 +40,9 @@ function LoginForm() {
 
     } catch (error) {
       console.log('Login error : ', error)
-      toast.error('Invalid Credentials!', {
+      toast.error('Kuch toh garbar hai daya !', {
         position: 'top-center',
-        autoClose: 500, 
+        autoClose: 500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -56,9 +56,9 @@ function LoginForm() {
   return (
     <div className='mx-auto h-screen bg-gray-950'>
       <div className='py-80 w-80 mx-auto h-screen text-center justify-center items-center'>
-      <Link to={'/'}>
-        <Img className="h-14 mb-4" src={Logo} alt="Cart icon" />
-      </Link>
+        <Link to={'/'}>
+          <Img className="h-14 mb-4" src={Logo} alt="Cart icon" />
+        </Link>
         <div className='mb-5 flex h-14'>
           <Img className='p-2 h-full bg-gray-800 border-y border-l border-gray-500 rounded-s' src={MailIcon} />
           <input className='h-14 px-4 w-80 text-gray-400 border-y border-r border-gray-500 bg-gray-700 rounded-e outline-none' type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)}
@@ -66,10 +66,10 @@ function LoginForm() {
         </div>
         <div className='mb-9 flex h-14'>
           <Img className='p-2 h-full bg-gray-800 border-y border-l border-gray-500 rounded-s' src={LockIcon} />
-          <input className='h-14 px-4 w-80 text-gray-400 border-y border-r border-gray-500 bg-gray-700 rounded-e outline-none' type="text" placeholder='Password' onChange={(e) => setPassword(e.target.value)}/>
+          <input className='h-14 px-4 w-80 text-gray-400 border-y border-r border-gray-500 bg-gray-700 rounded-e outline-none' type="text" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
         </div>
         <Link className="px-20 py-4 text-white bg-[#ff523b] hover:bg-[#ff3b3b] rounded-md transition-all duration-150" onClick={handleSubmit}>Login</Link>
-        <p className='mt-8 text-gray-400'>Not a member? <Link to= '/signup' className='text-white'>Sign up now -&gt;</Link></p>
+        <p className='mt-8 text-gray-400'>Not a member? <Link to='/signup' className='text-white'>Sign up now -&gt;</Link></p>
       </div>
     </div>
   )

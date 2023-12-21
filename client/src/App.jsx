@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
-import { Link, useNavigate, Navigate } from 'react-router-dom';
-import { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Products from './pages/Products.jsx';
 import Product from './pages/Product.jsx';
@@ -16,8 +15,6 @@ import SignUp from './pages/SignUp.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 function App() {
   const token = localStorage.getItem('token');
   return (
@@ -31,10 +28,7 @@ function App() {
             <Route path="/product/:id" element={<Product />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/cart"
-              element={token ? <Cart /> : <Navigate to="/" />}
-            />
+            <Route path="/cart" element={token ? <Cart /> : <Navigate to="/" />} />
             <Route path="/account" element={<Account />} />
             <Route path="/payment/:id" element={<Payment />} />
             <Route path="/login" element={<Login />} />
