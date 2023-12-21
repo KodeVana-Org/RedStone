@@ -43,10 +43,8 @@ export const Payment = () => {
         cardHolderName,
         cvc,
         amount: product.price,
-        currency: 'INR',
-        placeName: product.name,
+        productName: product.name,
         size: size,
-        id: id
       };
 
       try {
@@ -57,7 +55,7 @@ export const Payment = () => {
             Authorization: `Bearer ${token}`,
           },
         };
-        const response = await axios.post('http://localhost:6969/api/payment-get', paymentDetails, config);
+        const response = await axios.post('http://localhost:6969/api/payment', paymentDetails, config);
 
         if (response.status === 200) {
           setPaymentSuccess(true);

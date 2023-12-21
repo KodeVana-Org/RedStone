@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css';
 
+import Phone from "../../assets/icons-phone.png"
 import Logo from '../../assets/logo.png'
 import UserIcon from '../../assets/icon-user.png'
 import MailIcon from '../../assets/icon-email.png'
@@ -75,7 +76,7 @@ function SignUpForm() {
           <input className='h-14 px-4 w-80 text-gray-400 border-y border-r border-gray-500 bg-gray-700 rounded-e outline-none' type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
          </div>
          <div className='mb-5 flex h-14'>
-          <Img className='p-2 h-full bg-gray-800 border-y border-l border-gray-500 rounded-s' src={MailIcon} />
+          <Img className='p-2 h-full bg-gray-800 border-y border-l border-gray-500 rounded-s' src={Phone} />
           <input className='h-14 px-4 w-80 text-gray-400 border-y border-r border-gray-500 bg-gray-700 rounded-e outline-none' type="number" placeholder='Phone Number' onChange={(e) => setNumber(e.target.value)} />
          </div>
         <div className='mb-9 flex h-14'>

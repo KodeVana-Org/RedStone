@@ -24,18 +24,12 @@ const userSchema = new mongoose.Schema({
     resetTokenExpiration: {
         type: Date,
     },
-    // userDetails: [
-    //     {
-    //       type: mongoose.Schema.Types.ObjectId,
-    //       ref: 'UserDetail' 
-    //     }
-    //   ],
-    // purchasedPlaces: [
-    //     {
-    //       type: mongoose.Schema.Types.ObjectId,
-    //       ref: 'Product' 
-    //     }
-    //   ],
+    purchasedProduct: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Product' 
+        }
+      ],
     expirationTime: {
         type: Date,
     }

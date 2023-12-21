@@ -13,7 +13,7 @@ function Profile() {
     const auth = localStorage.getItem('token')
     if (!auth) {
       navigate('/login')
-      alert('login first')
+      // alert('login first')
     }
   })
 
