@@ -21,7 +21,7 @@ function ProductCards() {
       </div>
       <div className="grid grid-cols-4 gap-5">
         {ProductsData.map((product) => (
-          <Link key={product.id} className="mb-12 transition-all duration-700 hover:-translate-y-2" to={`/products/${product.id}`}>
+          <Link key={product.id} className="mb-12 transition-all duration-700 hover:-translate-y-2" to={`/product/${product.id}`}>
             <Img className="mb-2 h-80" src={product.image} alt={product.name} />
             <h3 className="mb-1 text-gray-600">{product.name}</h3>
             <div className="mb-1 flex gap-2 w-fit text-[#ff523b]">
