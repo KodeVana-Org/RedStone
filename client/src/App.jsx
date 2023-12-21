@@ -9,6 +9,8 @@ import Contact from './pages/Contact.jsx';
 import Cart from './pages/Cart.jsx';
 import { CartProvider } from './pages/cardContext.jsx';
 import Account from './pages/Account.jsx';
+import Login from './pages/Login.jsx';
+import SignUp from './pages/SignUp.jsx';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
       </CartProvider>
