@@ -9,6 +9,8 @@ import Contact from './pages/Contact.jsx';
 import Cart from './pages/Cart.jsx';
 import { CartProvider } from './pages/cardContext.jsx';
 import Account from './pages/Account.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
     <Router>
       <CartProvider>
       <div>
+      <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
