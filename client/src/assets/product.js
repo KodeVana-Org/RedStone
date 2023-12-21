@@ -11,98 +11,106 @@ import Product_10 from './product-10.jpg'
 import Product_11 from './product-11.jpg'
 import Product_12 from './product-12.jpg'
 import Product_13 from './product-13.jpg'
+import Product_14 from './product-14.png'
 
 const productsData = [
   {
     id: 1,
     name: 'Causal red t-shirt',
     image: Product_1,
-    link: '/product1',
+    link: '/product',
     price: 89.00
   },
   {
     id: 2,
     name: 'HRX Running Shoes',
     image: Product_2,
-    link: '/product2',
+    link: '/product',
     price: 70.00
   },
   {
     id: 3,
     name: 'Dark Gray Casual Pant',
     image: Product_3,
-    link: '/product2',
+    link: '/product',
     price: 50.00
   },
   {
     id: 4,
     name: 'Puma polo neck blue t-shirt',
     image: Product_4,
-    link: '/product2',
+    link: '/product',
     price: 75.00
   },
   {
     id: 5,
     name: 'Flat Heel gray shoes',
     image: Product_5,
-    link: '/product2',
+    link: '/product',
     price: 70.00
   },
   {
     id: 6,
     name: 'Puma black t-shirt',
     image: Product_6,
-    link: '/product2',
+    link: '/product',
     price: 50.00
   },
   {
     id: 7,
     name: "HRX Men's cotton socks",
     image: Product_7,
-    link: '/product2',
+    link: '/product',
     price: 24.00
   },
   {
     id: 8,
     name: 'Fossil Black Classic Watch',
     image: Product_8,
-    link: '/product2',
+    link: '/product',
     price: 45.00
   },
   {
     id: 9,
     name: 'Casual unisex watch',
     image: Product_9,
-    link: '/product2',
+    link: '/product',
     price: 90.00
   },
   {
     id: 10,
     name: 'Flat Lace-Fastening Shoes',
     image: Product_10,
-    link: '/product2',
+    link: '/product',
     price: 60.00
   },
   {
     id: 11,
     name: 'Loafers Men (Gray)',
     image: Product_11,
-    link: '/product2',
+    link: '/product',
     price: 90.00
   },
   {
     id: 12,
     name: 'Nike Black Track Pant',
     image: Product_12,
-    link: '/product2',
+    link: '/product',
     price: 86.00
   },
   {
     id: 13,
     name: 'Addidas Gray Hodie',
     image: Product_13,
-    link: '/product2',
+    link: '/product',
     price: 94.00
+  },
+  {
+    id: 13,
+    name: 'Smart workout wrist band',
+    image: Product_14,
+    link: '/product',
+    price: 103.00
   },
 ];
 
