@@ -20,7 +20,23 @@ export default function Product() {
 
   const handleSizeCheck = (size) => {
     setSelectedSize(size);
-    console.log(size);
+  };
+
+  const handleOrderClick = () => {
+    if (!selectedSize) {
+      toast.warn('Please select a size!', {
+        position: 'top-center',
+        autoClose: 500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    else{
+      localStorage.setItem('selectedSize', selectedSize);
+    }
   };
 
   if (!product) {
@@ -95,7 +111,7 @@ export default function Product() {
           <Img className='mb-10 h-96' src={product.image} />
         </div>
         <div className='flex gap-7 justify-center'>
-          <Link className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' to={'/cart'}>Buy Now</Link>
+          <Link to={!selectedSize ? '' : `/payment/${id}?source=product`} className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' onClick={handleOrderClick}>Order Now</Link>
           <button onClick={() => handleAddToCart(product)} className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md'>
             Add to Cart
           </button>

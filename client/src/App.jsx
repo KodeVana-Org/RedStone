@@ -6,6 +6,7 @@ import Products from './pages/Products.jsx';
 import Product from './pages/Product.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import {Payment} from "./pages/Payment.jsx"
 import Cart from './pages/Cart.jsx';
 import { CartProvider } from './pages/cardContext.jsx';
 import Account from './pages/Account.jsx';
@@ -27,6 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/payment/:id" element={<Payment />} />
         </Routes>
       </div>
       </CartProvider>

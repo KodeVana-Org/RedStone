@@ -1,10 +1,11 @@
 // import React from 'react';
 import { useCart } from './cardContext';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 import React from 'react';
-
+// localStorage.setItem('selectedSize', selectedSize)
 const CartPage = () => {
     const { cartItems, removeFromCart } = useCart();
 
@@ -25,6 +26,13 @@ const CartPage = () => {
         const subtotal = price * quantity;
         return isNaN(subtotal) ? 0 : subtotal; // Handle NaN by returning a default value (e.g., 0)
       };
+      const handleSetSizeInLocalStorage = (productId, selectedSize) => {
+        localStorage.setItem(`productsize`, selectedSize);
+      };
+    
+      const handleOrderNow = (productId, selectedSize) => {
+        handleSetSizeInLocalStorage(productId, selectedSize);
+      };
     
       return (
         <div className="mx-96 my-16">
@@ -43,6 +51,8 @@ const CartPage = () => {
                 <p className="text-gray-600">Price ${product.price}</p>
                 <p className="text-gray-600">Size: {product.selectedSize}</p>
                 <button onClick={() => handleRemove(product.id)} className='text-sm text-[#ff523b] cursor-pointer'>Remove</button>
+                <Link to={`/payment/${product.id}?source=cart`}  onClick={() => handleOrderNow(product.id, product.selectedSize)} className='ml-5 px-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' >Order Now</Link>
+               
               </span>
             </span>
             <input className="p-1 h-10 w-10 border" value={product.quantity} type="number" readOnly />
@@ -52,8 +62,11 @@ const CartPage = () => {
                 ? 'Invalid Subtotal'
                 : calculateSubtotal(product.price, product.quantity)}
             </p>
+            
           </div>
+          
         ))}
+         
       </div>
     </div>
   );
