@@ -7,7 +7,7 @@ function ContactForm() {
           <form className="" action="">
             <input className="mb-7 w-full px-6 py-3 border border-[#ff523b] rounded-md outline-none" type="text" placeholder="Enter Your Name" />
             <input className="mb-7 w-full px-6 py-3 border border-[#ff523b] rounded-md outline-none" type="text" placeholder="Enter Your Email" />
-            <textarea className="mb-7 w-full px-6 py-3 border border-[#ff523b] rounded-md outline-none" name="message" cols="30" rows="10" placeholder="Enter your message" />
+            <textarea className="mb-7 w-full px-6 py-3 border border-[#ff523b] rounded-md outline-none resize-none" name="message" cols="30" rows="10" placeholder="Enter your message" />
             <button className="px-5 py-2 text-[#ff523b] hover:text-white font-medium bg-white border hover:bg-[#ff523b] border-[#ff523b] rounded-md outline-none transition-all duration-300" type="submit">Send</button>
           </form>
         </div>

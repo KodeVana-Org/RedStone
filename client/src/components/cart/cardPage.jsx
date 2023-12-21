@@ -4,7 +4,6 @@ import { Img } from 'react-image'
 import { Link } from 'react-router-dom';
 import { useCart } from './cardContext';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
 
 import ProductsData from '../../assets/product.js'
 

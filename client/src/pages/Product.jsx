@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Img } from 'react-image';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import NavBar from '../components/navBar';
@@ -116,7 +116,7 @@ export default function Product() {
                 </span>
               ))}
             </div>
-            <p className='mb-5 text-base'>{product.price}</p>
+            <p className='mb-5 text-base'>${product.price}</p>
             <div className='mb-16 flex gap-2 w-fit text-[#ff523b]'>
               <i className='fa fa-star'></i>
               <i className='fa fa-star'></i>

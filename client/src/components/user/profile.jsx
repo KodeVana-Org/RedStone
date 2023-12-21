@@ -30,8 +30,8 @@ function Profile() {
       <div>
         <h3 className="mb-7 text-3xl font-medium">Your Orders</h3>
         <div className="flex gap-7 justify-center">
-          {ProductsData.slice(9, 13).map((product) => (
-            <Link key={product.id} className="transition-all duration-700 hover:-translate-y-2" to={`/products/${product.id}`}>
+          {ProductsData.slice(4, 8).map((product) => (
+            <Link key={product.id} className="transition-all duration-700 hover:-translate-y-2" to={`/product/${product.id}`}>
               <Img className="mb-1 h-80" src={product.image} alt={product.name} />
               <h3 className="mb-1 text-gray-600">{product.name}</h3>
               <div className="mb-1 flex gap-2 w-fit text-[#ff523b]">
@@ -41,7 +41,7 @@ function Profile() {
                 <i className="fa fa-star-half-o" ></i>
                 <i className="fa fa-star-o" ></i>
               </div>
-              <p className="text-gray-600">{product.price}</p>
+              <p className="text-gray-600">${product.price}</p>
             </Link>
           ))}
         </div>
