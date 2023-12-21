@@ -1,7 +1,7 @@
 import { Img } from 'react-image';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import { useCart } from './cardContext';
 import NavBar from '../components/navBar';
 import Footer from '../components/footer';
 
@@ -15,6 +15,7 @@ export default function Product() {
     return <div>Tour not found</div>;
   }
 
+    const { addToCart } = useCart();
   return (
     <div>
       <NavBar />
@@ -42,7 +43,11 @@ export default function Product() {
         </div>
         <div className='flex gap-7 justify-center'>
           <Link className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' to={'/cart'}>Buy Now</Link>
-          <Link className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' to={'/cart'}>Add to Cart</Link>
+          <button onClick={() => addToCart(product)} className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md'>
+          Add to Cart
+        </button>
+        {/* Link to cart page */}
+        <Link className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md' to={'/cart'}>Go to Cart</Link>
         </div>
       </div>
       <Footer />

@@ -7,12 +7,14 @@ import Product from './pages/Product.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Cart from './pages/Cart.jsx';
+import { CartProvider } from './pages/cardContext.jsx';
 import Account from './pages/Account.jsx';
 
 function App() {
 
   return (
     <Router>
+      <CartProvider>
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,6 +26,7 @@ function App() {
           <Route path="/account" element={<Account />} />
         </Routes>
       </div>
+      </CartProvider>
     </Router>
   )
 }
