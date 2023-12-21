@@ -1,11 +1,23 @@
 import { Img } from "react-image"
-import { Link } from "react-router-dom"
+import { Link, useNavigate} from "react-router-dom"
+import { useEffect,useState } from "react"
 
 import ProductsData from '../../assets/product'
-
 import UserDp from '../../assets/user-2.png'
 
+
 function Profile() {
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const auth = localStorage.getItem('token')
+    if (!auth) {
+      navigate('/login')
+      alert('login first')
+    }
+  })
+
+
   return (
     <div className="mx-96 my-16">
       <div className="mb-10 grid grid-cols-2 gap-16">
