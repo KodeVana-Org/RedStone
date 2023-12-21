@@ -9,7 +9,7 @@ import NavBar from '../components/navBar';
 import Footer from '../components/footer';
 
 import ProductsData from '../assets/product';
-import { useCart } from './cardContext';
+import { useCart } from '../components/cart/cardContext';
 
 export default function Product() {
   const [selectedSize, setSelectedSize] = useState(null);
@@ -46,7 +46,7 @@ export default function Product() {
 
   const handleAddToCart = () => {
     if (selectedSize) {
-      addToCart(product, selectedSize); // Pass both product and selectedSize
+      addToCart(product, selectedSize);
       setSelectedSize(null); 
       toast.success('Item added to cart!', {
         position: 'top-center',
