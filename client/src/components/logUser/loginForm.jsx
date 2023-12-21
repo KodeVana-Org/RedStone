@@ -40,7 +40,7 @@ function LoginForm() {
 
     } catch (error) {
       console.log('Login error : ', error)
-      toast.error('Invalid Credentials!', {
+      toast.error('Kuch toh garbar hai daya !', {
         position: 'top-center',
         autoClose: 500, 
         hideProgressBar: false,

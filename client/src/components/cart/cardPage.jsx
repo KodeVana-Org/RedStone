@@ -1,27 +1,12 @@
 import { useCart } from './cardContext';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Link , useNavigate} from 'react-router-dom';
 
 import React,{useEffect} from 'react';
 const CartPage = () => {
 
-// const navigate = useNavigate();
-// useEffect(() => {
-//   const auth = localStorage.getItem('token')
-//   if (!auth) {
-//     navigate('/')
-//     // alert('login first')
-//     toast.error('login first!', {
-//       position: 'top-center',
-//       autoClose: 500, 
-//       hideProgressBar: false,
-//       closeOnClick: true,
-//       pauseOnHover: true,
-//       draggable: true,
-//       progress: undefined,
-//     });
-//   }
-// })
     const { cartItems, removeFromCart } = useCart();
 
     const handleRemove = (productId) => {
