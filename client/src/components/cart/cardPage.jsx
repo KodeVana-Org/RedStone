@@ -53,7 +53,7 @@ const CartPage = () => {
                 <p className="text-gray-600">Size: {product.selectedSize}</p>
                 <button
                   onClick={() => handleRemove(product.id)}
-                  className='text-sm text-[#ff523b] cursor-pointer'>
+                  className=' px-2 mt-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md'>
                   Remove
                 </button>
                 <Link

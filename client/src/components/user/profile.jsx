@@ -2,6 +2,7 @@ import { Img } from "react-image"
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { toast} from 'react-toastify'
 
 import ProductsData from '../../assets/product'
 import UserDp from '../../assets/icon-user.png'
@@ -10,6 +11,8 @@ function Profile() {
   const [profileData, setProfileData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [id, setid] = useState(null);
+  const [realId, setrealId] = useState('')
+  const [message, setMessage] = useState('')
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -19,7 +22,6 @@ function Profile() {
     }
   })
 
- 
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -42,7 +44,12 @@ function Profile() {
           // Accessing the first element of purchaseDetails array
           setProfileData(data2[0].user);
           const allIds = data2.map(item => item.id);
+          const _id = data2.map(item => item._id);
           setid(allIds);
+         
+          setrealId(_id)
+          console.log(_id)
+          console.log(profileData)
 
         } else {
           console.log("No data available");
@@ -62,6 +69,13 @@ function Profile() {
   }, [profileData]);
 
 
+  const logout = () => {
+    const token = localStorage.removeItem('token');
+    if(!token) {
+      window.location.reload();
+    }
+  } 
+
   const filterProductsByIds = () => {
     if (!id) return []; // Return an empty array if 'id' is null or undefined
     const filteredProducts = ProductsData.filter(product => id.includes(product.id));
@@ -69,6 +83,25 @@ function Profile() {
   };
   // Call the function to get the filtered products based on the IDs
   const filteredProducts = filterProductsByIds();
+
+  const handleDelete = async (id) => {
+    console.log(id)
+    const confirmDelete = window.confirm('Are you sure you want to cancel this order?');
+    if (confirmDelete) {
+      try {
+        console.log(id)
+        const response = await axios.delete(`http://localhost:6969/api/delete/${id}`);
+        setMessage(response.data.message);
+        toast.success('cancel order successfully');
+        setTimeout(() => {
+          window.location.reload('/account');  
+        }, 1500);
+      } catch (error) {
+        setMessage('Failed to delete place');
+        console.error(error);
+      }
+    }
+  };
 
   return (
     <div className="mx-96 my-16">
@@ -100,7 +133,7 @@ function Profile() {
             <p className="text-sm text-gray-600">Type:</p>
             <p className="text-sm text-gray-600">Prime User</p>
           </span>
-          <button className="px-4 py-1.5 text-white bg-[#ff693b] hover:bg-[#ff3b3b] rounded-md">Logout</button>
+          <button className="px-4 py-1.5 text-white bg-[#ff693b] hover:bg-[#ff3b3b] rounded-md" onClick = {logout}>Logout</button>
         </div>
         
       </div>
@@ -111,7 +144,9 @@ function Profile() {
   <h3 className="mb-7 text-3xl font-medium">Your Orders</h3>
   <div className="flex gap-7 justify-center">
     {filteredProducts.map((product) => (
-      <Link key={product.id} className="transition-all duration-300 hover:-translate-y-2" to={`/product/${product.id}`}>
+      
+      <div> 
+        <Link key={product.id} className="transition-all duration-300 hover:-translate-y-2" to={`/product/${product.id}`}>
         <Img className="mb-1 h-80" src={product.image} alt={product.name} />
         <h3 className="mb-1 text-gray-600">{product.name}</h3>
         <div className="mb-1 flex gap-2 w-fit text-[#ff523b]">
@@ -122,10 +157,17 @@ function Profile() {
           <i className="fa fa-star-o"></i>
         </div>
         <p className="text-gray-600">${product.price}</p>
-      </Link>
+       </Link>
+        <button onClick={() => handleDelete(product[id])} className='px-3 py-2 text-[#ff523b] hover:text-white font-medium bg-white hover:bg-[#ff523b] border-2 border-[#ff523b] transition-all duration-300 rounded-md'>
+            cancel order
+          </button>
+       
+      </div>
+      
+    
     ))}
   </div>
-</div>;
+</div>
     </div>
   )
 }
